@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-ao">
 <head>
 	<meta charset="utf-8">
@@ -7,7 +7,7 @@
 </head>
 <body>
      <header>
-     	<h1>Logo</h1>
+     	<h1><img src="./img/LOGO-CHANAX-BLACK.png"></h1>
      	<nav>
      		<ul>
      			<li><a href="index.html">Home</a></li>
