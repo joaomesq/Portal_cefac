@@ -1,24 +1,118 @@
- <!DOCTYPE html>
+<?php
+   require_once "./php_action/conect.php";
+   $user_name = "Mesquita";
+
+   
+   function p_trimestre(){
+     global $user_name;
+     global $conect;
+     $sql = "SELECT *FROM notas WHERE trimestre = 1 AND nome_aluno = '$user_name' ORDER BY disciplina desc";
+     $consulta = mysqli_query($conect, $sql);
+
+     if( mysqli_num_rows($consulta) != 0){
+          
+          while($dados = mysqli_fetch_assoc($consulta)):
+               $media = ($dados['primeira_nota'] + $dados['segunda_nota'] )/ 2;
+               echo "
+                    <tr>
+                      <td>".$dados['disciplina']."</td>
+                      <td>".$dados['primeira_nota']."</td>
+                      <td>".$dados['segunda_nota']."</td>
+                      <td>".$media."</td>
+                    </tr>
+                    ";
+          endwhile;
+     }else{
+          echo "
+                      <td>---</td>
+                      <td>---</td>
+                      <td>---</td>
+                      <td>---</td>
+                    ";
+     }
+     
+   }
+
+   function s_trimestre(){
+     global $conect;
+     global $user_name;
+     $sql = "SELECT *FROM notas WHERE trimestre = 2 AND nome_aluno = '$user_name'";
+     $consulta = mysqli_query($conect, $sql);
+
+     if( mysqli_num_rows($consulta) != 0){
+          
+          while($dados = mysqli_fetch_assoc($consulta)):
+               $media = ($dados['primeira_nota'] + $dados['segunda_nota'] )/ 2;
+               echo "
+                    <tr>
+                      <td>".$dados['disciplina']."</td>
+                      <td>".$dados['primeira_nota']."</td>
+                      <td>".$dados['segunda_nota']."</td>
+                      <td>".$media."</td>
+                    </tr>
+                    ";
+          endwhile;
+     }else{
+          echo "
+                      <td>---</td>
+                      <td>---</td>
+                      <td>---</td>
+                      <td>---</td>
+                    ";
+     }
+   }
+
+   function t_trimestre(){
+     global $conect;
+     global $user_name;
+     $sql = "SELECT *FROM notas WHERE trimestre = 3 AND nome_aluno = '$user_name'";
+     $consulta = mysqli_query($conect, $sql);
+
+     if( mysqli_num_rows($consulta) != 0){
+          
+          while($dados = mysqli_fetch_assoc($consulta)):
+               $media = ($dados['primeira_nota'] + $dados['segunda_nota'] )/ 2;
+               echo "
+                    <tr>
+                      <td>".$dados['disciplina']."</td>
+                      <td>".$dados['primeira_nota']."</td>
+                      <td>".$dados['segunda_nota']."</td>
+                      <td>".$media."</td>
+                    </tr>
+                    ";
+          endwhile;
+     }else{
+          echo "
+                      <td>---</td>
+                      <td>---</td>
+                      <td>---</td>
+                      <td>---</td>
+                    ";
+     }
+   }
+   
+?>
+<!DOCTYPE html>
 <html lang="pt-ao">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>YIA | Portal Informática</title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>YIA | Portal Informática</title>
 </head>
 <body>
      <header>
-     	<h1><img src="./img/LOGO-CHANAX-BLACK.png"></h1>
-     	<nav>
-     		<ul>
-     			<li><a href="index.html">Home</a></li>
-     			<li><a href="notas.html">Notas</a></li>
-     			<li><a href="biblioteca.html">Biblioteca</a></li>
-     		</ul>
-     	</nav>
+          <h1><img src="../img/LOGO-CHANAX-BLACK.png"></h1>
+          <nav>
+               <ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="notas.php">Notas</a></li>
+                    <li><a href="biblioteca.php">Biblioteca</a></li>
+               </ul>
+          </nav>
      </header>
 
      <main>
-     	<h2>User_name</h2>
+          <h2><?php echo $user_name; ?></h2>
           <article class="notas">
                <section class="primeiro_trimestre">
                     <h3>1º Trimestre</h3>
@@ -32,54 +126,9 @@
                               </tr>
                          </thead>
                          <tbody>
-                              <tr>
-                                   <td>Programção</td>
-                                   <td>nota1</td>
-                                   <td>nota2</td>
-                                   <td>media_final</td>
-                              </tr>
-                              <tr>
-                                   <td>SEAC</td>
-                                   <td>nota1</td>
-                                   <td>nota2</td>
-                                   <td>media_final</td>
-                              </tr>
-                              <tr>
-                                   <td>PT</td>
-                                   <td>nota1</td>
-                                   <td>nota2</td>
-                                   <td>media_final</td>
-                              </tr>
-                              <tr>
-                                   <td>TREI</td>
-                                   <td>nota1</td>
-                                   <td>nota2</td>
-                                   <td>media_final</td>
-                              </tr>
-                              <tr>
-                                   <td>Matemática</td>
-                                   <td>nota1</td>
-                                   <td>nota2</td>
-                                   <td>media_final</td>
-                              </tr>
-                              <tr>
-                                   <td>Física</td>
-                                   <td>nota1</td>
-                                   <td>nota2</td>
-                                   <td>media_final</td>
-                              </tr>
-                              <tr>
-                                   <td>OGI</td>
-                                   <td>nota1</td>
-                                   <td>nota2</td>
-                                   <td>media_final</td>
-                              </tr>
-                              <tr>
-                                   <td>EMP</td>
-                                   <td>nota1</td>
-                                   <td>nota2</td>
-                                   <td>media_final</td>
-                              </tr>
+                                   <?php
+                                        p_trimestre();
+                                   ?>
                          </tbody>
                     </table>
                </section>
@@ -95,54 +144,9 @@
                               </tr>
                          </thead>
                          <tbody>
-                              <tr>
-                                   <td>Programção</td>
-                                   <td>nota1</td>
-                                   <td>nota2</td>
-                                   <td>media_final</td>
-                              </tr>
-                              <tr>
-                                   <td>SEAC</td>
-                                   <td>nota1</td>
-                                   <td>nota2</td>
-                                   <td>media_final</td>
-                              </tr>
-                              <tr>
-                                   <td>PT</td>
-                                   <td>nota1</td>
-                                   <td>nota2</td>
-                                   <td>media_final</td>
-                              </tr>
-                              <tr>
-                                   <td>TREI</td>
-                                   <td>nota1</td>
-                                   <td>nota2</td>
-                                   <td>media_final</td>
-                              </tr>
-                              <tr>
-                                   <td>Matemática</td>
-                                   <td>nota1</td>
-                                   <td>nota2</td>
-                                   <td>media_final</td>
-                              </tr>
-                              <tr>
-                                   <td>Física</td>
-                                   <td>nota1</td>
-                                   <td>nota2</td>
-                                   <td>media_final</td>
-                              </tr>
-                              <tr>
-                                   <td>OGI</td>
-                                   <td>nota1</td>
-                                   <td>nota2</td>
-                                   <td>media_final</td>
-                              </tr>
-                              <tr>
-                                   <td>EMP</td>
-                                   <td>nota1</td>
-                                   <td>nota2</td>
-                                   <td>media_final</td>
-                              </tr>
+                              <?php
+                                   s_trimestre();
+                              ?>
                          </tbody>
                     </table>
                </section>
@@ -158,54 +162,9 @@
                               </tr>
                          </thead>
                          <tbody>
-                              <tr>
-                                   <td>Programção</td>
-                                   <td>nota1</td>
-                                   <td>nota2</td>
-                                   <td>media_final</td>
-                              </tr>
-                              <tr>
-                                   <td>SEAC</td>
-                                   <td>nota1</td>
-                                   <td>nota2</td>
-                                   <td>media_final</td>
-                              </tr>
-                              <tr>
-                                   <td>PT</td>
-                                   <td>nota1</td>
-                                   <td>nota2</td>
-                                   <td>media_final</td>
-                              </tr>
-                              <tr>
-                                   <td>TREI</td>
-                                   <td>nota1</td>
-                                   <td>nota2</td>
-                                   <td>media_final</td>
-                              </tr>
-                              <tr>
-                                   <td>Matemática</td>
-                                   <td>nota1</td>
-                                   <td>nota2</td>
-                                   <td>media_final</td>
-                              </tr>
-                              <tr>
-                                   <td>Física</td>
-                                   <td>nota1</td>
-                                   <td>nota2</td>
-                                   <td>media_final</td>
-                              </tr>
-                              <tr>
-                                   <td>OGI</td>
-                                   <td>nota1</td>
-                                   <td>nota2</td>
-                                   <td>media_final</td>
-                              </tr>
-                              <tr>
-                                   <td>EMP</td>
-                                   <td>nota1</td>
-                                   <td>nota2</td>
-                                   <td>media_final</td>
-                              </tr>
+                              <?php
+                                   t_trimestre();
+                              ?>
                          </tbody>
                     </table>
                </section>
