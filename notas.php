@@ -107,6 +107,7 @@
                     <li><a href="index.php">Home</a></li>
                     <li><a href="notas.php">Notas</a></li>
                     <li><a href="biblioteca.php">Biblioteca</a></li>
+                    <li><a href="login.php">Login</a></li>
                </ul>
           </nav>
      </header>
