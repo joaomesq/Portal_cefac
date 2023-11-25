@@ -1,5 +1,8 @@
 <?php
-   require_once "./php_action/conect.php";
+require_once './php_action/validar.php';
+//conexao
+require_once './php_action/conect.php';
+
    $user_name = "Mesquita";
 
    

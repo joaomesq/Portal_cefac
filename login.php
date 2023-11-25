@@ -1,3 +1,37 @@
+<?php
+//Conexão
+require_once './php_action/conect.php';
+
+//Iniciando sessão
+session_start();
+
+if (isset($_POST['btn_entrar'])) {
+	// code...
+	$nome = clear($_POST['nome']);
+	$senha = clear($_POST['senha']);
+    $mensagem;
+
+    if(empty($nome) OR empty($senha)):
+    	$mensagem = 'Preencha todos os campos';
+    else:
+    	$sql = "SELECT nome_usuario FROM usuarios WHERE n_processo_usuario = '$nome' AND senha_usuario = '$senha'";
+    	$consulta = mysqli_query($conect, $sql);
+
+    	if(mysqli_num_rows($consulta) == 1 ):
+    		$dados = mysqli_fetch_assoc($consulta);
+            $mensagem = 'Welcome '.$dados['nome_usuario'];
+            $_SESSION['logado'] = true;
+            $_SESSION['usuario'] = $dados['nome_usuario'];
+            
+            header('Location: index.php');
+    	else:
+    		$mensagem = 'Credencias incorretas';
+    	endif;
+
+    endif;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-ao">
 <head>
@@ -31,7 +65,7 @@
      			</p>
      			<a href="#">Esqueceu a senah?</a>
      			<br>
-     			<button type="submit" name="Entrar">Entrar</button>
+     			<button type="submit" name="btn_entrar">Entrar</button>
      		</form>
      	</section>
      </main>

@@ -1,3 +1,7 @@
+<?php
+//validar
+require_once './php_action/validar.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-ao">
 <head>
