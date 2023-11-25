@@ -163,7 +163,7 @@ endif;
      </header>
 
      <main>
-        <h2>User_name</h2>
+        <h2><?php echo $_SESSION['usuario']; ?></h2>
         <article class="conteudo">
             <section class="materia">
                 <h3>Apresentações</h3>
@@ -232,6 +232,8 @@ endif;
                     </fieldset>
                 </form>
             </section>
+
+            <a href="biblioteca.php?sair=1">Sair</a>
         </article>
      </main>
      <footer></footer>

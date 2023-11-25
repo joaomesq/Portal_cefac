@@ -40,17 +40,9 @@ if (isset($_POST['btn_entrar'])) {
 	<title>YIA | Portal Informática</title>
 </head>
 <body>
-      <header>
+    <header>
      	<h1>Logo</h1>
-     	<nav>
-     		<ul>
-     			<li><a href="index.php">Home</a></li>
-     			<li><a href="notas.php">Notas</a></li>
-     			<li><a href="biblioteca.php">Biblioteca</a></li>
-     			<li><a href="login.php">Login</a></li>
-     		</ul>
-     	</nav>
-     </header>
+    </header>
 
      <main>
      	<section class="login">

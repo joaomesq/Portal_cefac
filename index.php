@@ -24,7 +24,7 @@ require_once './php_action/validar.php';
 
      <main>
      	<h2>User_name</h2>
-
+          <a href="biblioteca.php?sair=1">Sair</a>
      </main>
      <footer></footer>
 </body>

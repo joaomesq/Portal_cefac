@@ -116,7 +116,7 @@ require_once './php_action/conect.php';
      </header>
 
      <main>
-          <h2><?php echo $user_name; ?></h2>
+          <h2><?php echo $_SESSION['usuario']; ?></h2>
           <article class="notas">
                <section class="primeiro_trimestre">
                     <h3>1º Trimestre</h3>
@@ -172,6 +172,7 @@ require_once './php_action/conect.php';
                          </tbody>
                     </table>
                </section>
+               <a href="biblioteca.php?sair=1">Sair</a>
           </article>
      </main>
      <footer></footer>
