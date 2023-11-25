@@ -10,9 +10,9 @@
      	<h1>Logo</h1>
      	<nav>
      		<ul>
-     			<li><a href="index.html">Home</a></li>
-     			<li><a href="notas.html">Notas</a></li>
-     			<li><a href="biblioteca.html">Biblioteca</a></li>
+     			<li><a href="index.php">Home</a></li>
+     			<li><a href="notas.php">Notas</a></li>
+     			<li><a href="biblioteca.php">Biblioteca</a></li>
      		</ul>
      	</nav>
      </header>
