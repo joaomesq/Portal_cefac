@@ -2,6 +2,8 @@
 //conexao
 require_once './php_action/conect.php';
 
+
+
 //UPLOAD APRESENTACAO
 function ulpoad_apresentacao(){
     global $conect;
@@ -35,7 +37,6 @@ function ulpoad_apresentacao(){
         if($sucesso):
             $sql = "INSERT INTO apresentacao (titulo_apresentacao, disciplina_apresentacao, data_upload_apresentacao, caminho_apresentacao) VALUES ('$nome_apresentacao', '$disciplina', NOW(), '$caminho')";
             $consulta = mysqli_query($conect, $sql);
-            echo "Livro carregado com sucesso para acessar, clique aqui: <a href='$caminho' target='_blank'>Clique Aqui</a>";
         else:
             echo "Fallha ao enviar arquivo";
         endif;
@@ -78,10 +79,53 @@ function ulpoad_livros(){
         if($sucesso):
             $sql = "INSERT INTO livros (titulo_livro, autor_livro, categoria_livro, ano_publicacao_livro, data_upload_livro, caminho_livro) VALUES ('$nome_livro', '$autor', '$categoria', '$ano_publicacao_livro', NOW(), '$caminho')";
             $consulta = mysqli_query($conect, $sql);
-            echo "Livro carregado com sucesso para acessar, clique aqui: <a href='$caminho' target='_blank'>Clique Aqui</a>";
         else:
             echo "Fallha ao enviar arquivo";
         endif;
+    endif;
+}
+
+//exibir livro
+function exibir_livro(){
+    global $conect;
+    $sql = "SELECT *FROM livros ORDER BY categoria_livro DESC";
+    $consulta = mysqli_query($conect, $sql);
+
+    if(mysqli_num_rows($consulta) != 0):
+        while($livros = mysqli_fetch_assoc($consulta)):
+            echo "
+                 <tr>
+                     <td>".$livros['titulo_livro']."</td>
+                     <td>".$livros['autor_livro']."</td>
+                     <td>".$livros['ano_publicacao_livro']."</td>
+                     <td>".$livros['categoria_livro']."</td>
+                     <td><a href='".$livros['caminho_livro']."' target='_blank'>download</a></td>
+                 </tr>
+                 ";
+        endwhile;
+    else:
+        echo "Não existem Livros";
+    endif;
+}
+
+//exibir apresentacao
+function exibir_apresentacao(){
+    global $conect;
+    $sql = "SELECT *FROM apresentacao ORDER BY disciplina_apresentacao DESC";
+    $consulta = mysqli_query($conect, $sql);
+
+    if(mysqli_num_rows($consulta) != 0):
+        while($apresentacoes = mysqli_fetch_assoc($consulta)):
+            echo "
+                 <tr>
+                     <td>".$apresentacoes['disciplina_apresentacao']."</td>
+                     <td>".$apresentacoes['titulo_apresentacao']."</td>
+                     <td><a href='".$apresentacoes['caminho_apresentacao']."' target='_blank'>download</a></td>
+                 </tr>
+                 ";
+        endwhile;
+    else:
+        echo "Não existem Livros";
     endif;
 }
 
@@ -125,24 +169,14 @@ endif;
                         <tr>
                             <th>Disciplina</th>
                             <th>Título</th>
-                            <th>Professor</th>
                             <th>Link</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <td>SEAC</td>
-                            <td>Endereçamento IP</td>
-                            <td>Maria Soares</td>
-                            <td><a href="#">download</a></td>
-                        </tr>
-                        <tr>
-                            <td>Progamação</td>
-                            <td>Introdução ao HTML5</td>
-                            <td>Cadiny</td>
-                            <td><a href="#">download</a></td>
-                        </tr>
+                        <?php
+                            exibir_apresentacao();
+                        ?>
                     </tbody>
                 </table>
 
@@ -168,23 +202,15 @@ endif;
                             <th>Título</th>
                             <th>Autor</th>
                             <th>Ano de Publicação</th>
+                            <th>Categoria</th>
                             <th>Link</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <td>HTML5 & CSS3</td>
-                            <td>Lucas Mazza</td>
-                            <td>2012</td>
-                            <td><a href="#">download</a></td>
-                        </tr>
-                        <tr>
-                            <td>MD_Redes de Computador</td>
-                            <td>Santa Maria</td>
-                            <td>2018</td>
-                            <td><a href="#">download</a></td>
-                        </tr>
+                          <?php
+                              exibir_livro();
+                          ?>
                     </tbody>
                 </table>
 
