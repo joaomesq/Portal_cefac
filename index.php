@@ -17,6 +17,10 @@ require_once './php_action/validar.php';
      <header class="cabecalho">
           <section>
      	<h1><a href="index.php"><img src="./img/logo_black.png"></a></h1>
+          
+          <button class="btn_open">Open</button>
+          <div class="modal">
+          <button class="btn_close">X</button>
      	<nav>
      		<ul>
                     <li><a href="index.php">Home</a></li>
@@ -35,5 +39,14 @@ require_once './php_action/validar.php';
      <footer></footer>
      <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="./js/materialize.min.js"></script>
+
+    <script>
+          $(".btn_open").click(function () {
+               $(".modal").show();
+          })
+          $(".btn_close").click(function () {
+               $(".modal").hide();
+          });
+     </script>
 </body>
 </html>
