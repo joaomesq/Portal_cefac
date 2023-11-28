@@ -1,0 +1,66 @@
+*{
+	box-sizing: border-box;
+	padding: auto;
+	margin: auto;
+}
+a{
+	color: #000;
+	text-decoration: none;
+}
+li{
+	list-style: none;
+}
+.cabecalho{
+	
+	width: 100%;
+
+}
+.cabecalho section{
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.cabecalho section h1{
+	margin-left: 0;
+}
+.cabecalho img{
+	width: 200px;
+	height: 100px;
+}
+
+.cabecalho nav ul{
+	margin-right: -20px;
+}
+.cabecalho nav ul li{
+	display: inline-block;
+	margin: 5px;
+	text-transform: uppercase;
+}
+.cabecalho nav ul li:hover{
+	border-bottom: 1px solid #f00;
+	transform: translateY(-5px);
+	transition: 1s linear;
+}
+
+.cabecalho h2{
+	font-size: 0.8em;
+	font-weight: 50;
+	text-align: right;
+	margin-right: 10px;
+}
+.cabecalho h2 span{
+	border: solid #f00 1px;
+	border-radius: 4px;
+	padding: 5px;
+}
+
+.btn_sair{
+	position: fixed;
+	top: 90%;
+	left: 90%;
+
+	color: white;
+	background: #f00;
+	padding: 10px;
+	border-radius: 4px;
+}

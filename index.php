@@ -14,8 +14,9 @@ require_once './php_action/validar.php';
 	<title>YIA | Portal Informática</title>
 </head>
 <body>
-     <header>
-     	<h1>Logo</h1>
+     <header class="cabecalho">
+          <section>
+     	<h1><a href="index.php"><img src="./img/logo_black.png"></a></h1>
      	<nav>
      		<ul>
                     <li><a href="index.php">Home</a></li>
@@ -24,11 +25,12 @@ require_once './php_action/validar.php';
                     <li><a href="login.php">Login</a></li>
                </ul>
      	</nav>
+          </section>
+          <h2><span><?php echo $_SESSION['usuario']; ?></span></h2>
      </header>
 
-     <main>
-     	<h2><?php echo $_SESSION['usuario']; ?></h2>
-          <a href="biblioteca.php?sair=1">Sair</a>
+     <main class="principal">
+          <a href="biblioteca.php?sair=1" class="btn_sair">Sair</a>
      </main>
      <footer></footer>
      <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
