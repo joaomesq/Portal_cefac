@@ -2,13 +2,14 @@
 	border-sizing: border-box;
 }
 .notas{
+	margin-top: 30px;
 	display: grid;
 	grid-template-rows: 1fr 1fr 1fr;
 
 }
 .trimestre{
 	width: 100%;
-	margin: -10px 0 -10px 0 ;
+	
 }
 .trimestre h3{
 	text-align: right;

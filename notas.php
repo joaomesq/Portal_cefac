@@ -100,11 +100,13 @@ $user_name = $_SESSION['usuario'];
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <link rel="stylesheet" href="./css/notas.css">
+     <link rel="stylesheet" type="text/css" href="./css/custom.css">
      <title>YIA | Portal Informática</title>
 </head>
 <body>
-     <header>
-          <h1><img src="../img/LOGO-CHANAX-BLACK.png"></h1>
+     <header class="cabecalho">
+          <section>
+          <h1><a href="index.php"><img src="./img/logo_black.png"></a></h1>
           <nav>
                <ul>
                     <li><a href="index.php">Home</a></li>
@@ -113,13 +115,13 @@ $user_name = $_SESSION['usuario'];
                     <li><a href="login.php">Login</a></li>
                </ul>
           </nav>
+          </section>
+          <h2><span><?php echo $_SESSION['usuario']; ?></span></h2>
      </header>
-
      <main>
-          <h2><?php echo $_SESSION['usuario']; ?></h2>
           <article class="notas">
                <section class="trimestre">
-                    <h3>1º Trimestre</h3>
+                    <h3 class="span"><span>1º Trimestre</span></h3>
                     <table border="1">
                          <thead>
                               <tr>
@@ -137,7 +139,7 @@ $user_name = $_SESSION['usuario'];
                     </table>
                </section>
                <section class="trimestre">
-                    <h3>2º Trimestre</h3>
+                    <h3 class="span"><span>2º Trimestre</span></h3>
                     <table border="1">
                          <thead>
                               <tr>
@@ -155,7 +157,7 @@ $user_name = $_SESSION['usuario'];
                     </table>
                </section>
                <section class="trimestre">
-                    <h3>3º Trimestre</h3>
+                    <h3 class="span"><span>3º Trimestre</span></h3>
                     <table border="1">
                          <thead>
                               <tr>
@@ -172,7 +174,7 @@ $user_name = $_SESSION['usuario'];
                          </tbody>
                     </table>
                </section>
-               <a href="biblioteca.php?sair=1">Sair</a>
+               <a href="notas.php?sair=1" class="btn_sair">Sair</a>
           </article>
      </main>
      <footer></footer>

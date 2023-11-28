@@ -147,26 +147,29 @@ endif;
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/custom.css">
     <title>YIA | Portal Informática</title>
 </head>
 <body>
-    <header>
-        <h1><img src="../img/LOGO-CHANAX-BLACK.png"></h1>
+    <header class="cabecalho">
+          <section>
+        <h1><a href="index.php"><img src="./img/logo_black.png"></a></h1>
         <nav>
             <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="notas.php">Notas</a></li>
-                <li><a href="biblioteca.php">Biblioteca</a></li>
-                <li><a href="login.php">Login</a></li>
-            </ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="notas.php">Notas</a></li>
+                    <li><a href="biblioteca.php">Biblioteca</a></li>
+                    <li><a href="login.php">Login</a></li>
+               </ul>
         </nav>
+          </section>
+          <h2 ><span><?php echo $_SESSION['usuario']; ?></span></h2>
      </header>
 
      <main>
-        <h2><?php echo $_SESSION['usuario']; ?></h2>
         <article class="conteudo">
             <section class="materia">
-                <h3>Apresentações</h3>
+                <h3 class="span"><span>Apresentações</span></h3>
                 <table border="1">
                     <thead>
                         <tr>
@@ -198,7 +201,7 @@ endif;
             </section>
 
             <section class="livros">
-                <h3>Livros</h3>
+                <h3 class="span"><span>Livros</span></h3>
                 <table border="1">
                     <thead>
                         <tr>
@@ -233,7 +236,7 @@ endif;
                 </form>
             </section>
 
-            <a href="biblioteca.php?sair=1">Sair</a>
+            <a href="biblioteca.php?sair=1" class="btn_sair">Sair</a>
         </article>
      </main>
      <footer></footer>
