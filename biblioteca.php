@@ -148,6 +148,7 @@ endif;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./css/custom.css">
+    <link rel="stylesheet" href="./css/biblioteca.css">
     <title>YIA | Portal Informática</title>
 </head>
 <body>
@@ -172,7 +173,7 @@ endif;
 
      <main>
         <article class="conteudo">
-            <section class="materia">
+            <section class="material">
                 <h3 class="span"><span>Apresentações</span></h3>
                 <table border="1">
                     <thead>
@@ -190,8 +191,11 @@ endif;
                     </tbody>
                 </table>
 
-                <button name="adicionar_apresentacao">Adicionar</button>
+                <button name="adicionar_apresentacao" class="btn_adicionar_apresentacao">Adicionar</button>
+                
+                <div class="adicionar_apresentacao"></div>
                 <form action="" method="POST" name="apresentacao" enctype="multipart/form-data">
+                    <button class="btn_close_apresentacao">X</button>
                     <fieldset>
                         <legend>Adicionar Apresentação</legend>
 
@@ -204,7 +208,7 @@ endif;
                 </form>
             </section>
 
-            <section class="livros">
+            <section class="material">
                 <h3 class="span"><span>Livros</span></h3>
                 <table border="1">
                     <thead>
@@ -224,8 +228,11 @@ endif;
                     </tbody>
                 </table>
 
-                <button name="adicionar_livro">Adiconar</button>
+                <button name="adicionar_livro" class="btn_adicionar_livro">Adiconar</button>
+
+                <div class="adicionar_livro">
                 <form name="livro" action="" method="POST" enctype="multipart/form-data">
+                    <button class="btn_close_livro">X</button>
                     <fieldset>
                         <legend>Adicionar Livro</legend>
 
@@ -238,6 +245,7 @@ endif;
                         <button type="reset">Limpar</button>
                     </fieldset>
                 </form>
+                </div>
             </section>
 
             <a href="biblioteca.php?sair=1" class="btn_sair">Sair</a>
@@ -254,6 +262,22 @@ endif;
           })
           $(".btn_close").click(function () {
                $(".modal").hide();
+          });
+
+          //modal adicionar apresentacao
+          $(".btn_adicionar_apresentacao").click(function () {
+               $(".adicionar_apresentacao").show();
+          })
+          $(".btn_close_apresentacao").click(function () {
+               $(".adicionar_apresentacao").hide();
+          });
+
+          //modal adiconar livro
+          $(".btn_adiconar_livro").click(function () {
+               $(".adicionar_livro").show();
+          })
+          $(".btn_close_livro").click(function () {
+               $(".adicionar_livro").hide();
           });
      </script>
 </body>
