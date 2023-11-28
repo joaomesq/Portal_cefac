@@ -29,6 +29,7 @@ if (isset($_POST['btn_entrar'])) {
     	endif;
 
     endif;
+    $_SESSION['mensagem'] = $mensagem;
 }
 ?>
 

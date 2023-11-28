@@ -3,8 +3,7 @@ require_once './php_action/validar.php';
 //conexao
 require_once './php_action/conect.php';
 
-   $user_name = "Mesquita";
-
+$user_name = $_SESSION['usuario'];
    
    function p_trimestre(){
      global $user_name;
@@ -100,6 +99,7 @@ require_once './php_action/conect.php';
 <head>
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="./css/notas.css">
      <title>YIA | Portal Informática</title>
 </head>
 <body>
@@ -118,7 +118,7 @@ require_once './php_action/conect.php';
      <main>
           <h2><?php echo $_SESSION['usuario']; ?></h2>
           <article class="notas">
-               <section class="primeiro_trimestre">
+               <section class="trimestre">
                     <h3>1º Trimestre</h3>
                     <table border="1">
                          <thead>
@@ -136,7 +136,7 @@ require_once './php_action/conect.php';
                          </tbody>
                     </table>
                </section>
-               <section class="segundo_trimestre">
+               <section class="trimestre">
                     <h3>2º Trimestre</h3>
                     <table border="1">
                          <thead>
@@ -154,7 +154,7 @@ require_once './php_action/conect.php';
                          </tbody>
                     </table>
                </section>
-               <section class="terceiro_trimestre">
+               <section class="trimestre">
                     <h3>3º Trimestre</h3>
                     <table border="1">
                          <thead>
@@ -176,5 +176,7 @@ require_once './php_action/conect.php';
           </article>
      </main>
      <footer></footer>
+     <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="./js/materialize.min.js"></script>
 </body>
 </html>
