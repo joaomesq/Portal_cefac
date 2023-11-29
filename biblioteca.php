@@ -191,21 +191,24 @@ endif;
                     </tbody>
                 </table>
 
-                <button name="adicionar_apresentacao" class="btn_adicionar_apresentacao">Adicionar</button>
+                <button name="adicionar_apresentacao" class="btn_adicionar_apresentacao btn_adicionar">Adicionar</button>
                 
-                <div class="adicionar_apresentacao"></div>
+                <div class="modal_add adicionar_apresentacao">
+                <button class="btn_close_adicionar btn_close_apresentacao">X</button>
+
                 <form action="" method="POST" name="apresentacao" enctype="multipart/form-data">
-                    <button class="btn_close_apresentacao">X</button>
+                    
                     <fieldset>
                         <legend>Adicionar Apresentação</legend>
 
                         <p><input type="text" name="disciplina" placeholder="Disciplina"></p>
                         <p><input type="file" name="arquivo_apresentacao"></p>
 
-                        <button name="carregar_apresentacao" type="submite">Upload</button>
-                        <button type="reset">Limpar</button>
+                        <button name="carregar_apresentacao" type="submite" class="btn_adicionar">Upload</button>
+                        <button type="reset" class="limpar">Limpar</button>
                     </fieldset>
                 </form>
+                </div>
             </section>
 
             <section class="material">
@@ -228,12 +231,13 @@ endif;
                     </tbody>
                 </table>
 
-                <button name="adicionar_livro" class="btn_adicionar_livro">Adiconar</button>
+                <button name="adicionar_livro" class="btn_adicionar_livro btn_adicionar">Adiconar</button>
 
-                <div class="adicionar_livro">
+                <div class="modal_add adicionar_livro">
+                <button class="btn_close_adicionar btn_close_livro">X</button>
+
                 <form name="livro" action="" method="POST" enctype="multipart/form-data">
-                    <button class="btn_close_livro">X</button>
-                    <fieldset>
+                        <fieldset>
                         <legend>Adicionar Livro</legend>
 
                         <p><input type="text" name="autor_livro" placeholder="Autor"></p>
@@ -241,8 +245,8 @@ endif;
                         <p><input type="number" name="ano_publicacao_livro" placeholder="Ano de Publicação"></p>
                         <p><input type="file" name="arquivo_livro"></p>
                         
-                        <button name="carregar_livro" type="submite">Upload</button>
-                        <button type="reset">Limpar</button>
+                        <button name="carregar_livro" type="submite" class="btn_adicionar">Upload</button>
+                        <button type="reset" class="limpar">Limpar</button>
                     </fieldset>
                 </form>
                 </div>
@@ -273,7 +277,7 @@ endif;
           });
 
           //modal adiconar livro
-          $(".btn_adiconar_livro").click(function () {
+          $(".btn_adicionar_livro").click(function () {
                $(".adicionar_livro").show();
           })
           $(".btn_close_livro").click(function () {

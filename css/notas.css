@@ -51,11 +51,12 @@
 /* LARGE DEVICES */
 @media screen and (min-width: 1024px){
 	.notas{
+		padding: 10px;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-rows: 1fr;
 	}
 	.trimestre{
-		margin: 0 10px;
+		margin: 0 5px;
 	}
 	.trimestre table{
 		width: 99%;
