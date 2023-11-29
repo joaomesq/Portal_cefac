@@ -32,6 +32,11 @@ button{
 	width: 200px;
 	height: 100px;
 }
+.cabecalho .btn_open{
+	padding: 8px;
+	border: none;
+	border-radius: 4px;
+}
 
 .cabecalho h2{
 	font-size: 0.8em;
@@ -95,7 +100,6 @@ button{
 	background-color: inherit;
 	color: #fff;
 }
-
 
 
 /*LARGE DEVICES*/
