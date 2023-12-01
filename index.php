@@ -9,6 +9,7 @@ require_once './php_action/validar.php';
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+      <link rel="stylesheet" href="./css/normalize.css">
      <link rel="stylesheet" href="./css/custom.css">
 
 	<title>YIA | Portal Informática</title>
