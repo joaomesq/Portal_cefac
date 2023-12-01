@@ -255,7 +255,11 @@ endif;
             <a href="biblioteca.php?sair=1" class="btn_sair">Sair</a>
         </article>
      </main>
-     <footer></footer>
+     
+     <footer class="center">
+          <p>"Chanax: Desenvolvendo ideias, criando soluções"</p>
+          <p>&copy; 2023 - Todos os direitos reservados a Chanax Tecnolog.</p>
+     </footer>
 
      <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="./js/materialize.min.js"></script>

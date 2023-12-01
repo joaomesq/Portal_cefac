@@ -15,6 +15,7 @@ button{
 }
 /*------------------*/
 
+/*Estilizando o cabecalho*/
 .cabecalho{
 	
 	width: 100%;
@@ -101,7 +102,16 @@ button{
 	color: #fff;
 }
 
+/*Estilizando o Rodape*/
+.center{
+	text-align: center;
+}
+footer{
+	margin-top: 50px;
+}
 
+
+/*RESPONSIVIDADE*/
 /*LARGE DEVICES*/
 @media screen and (min-width: 768px){
 
