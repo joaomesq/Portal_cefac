@@ -49,19 +49,24 @@
 	border: none;
 }
 
+/*Estilizando o modal adicionar*/
 .adicionar{
-	
 	padding: 15px;
-	margin-top: -150px;
+	margin-top: -75px;
+}
+.modal_adicionar{
+	display: grid;
+	grid-template-rows: 1fr 1fr;
 }
 
+/*Estilizando os botões do modal adiconar*/
 .btn_adicionar{
 	background: rgba(0, 51, 102, 0.9);
 	color: #fff;
 	border: none;
 	border-radius: 4px;
 	padding: 8px;
-	width: 80px;
+	width: 100px;
 	font-size: 1.0em;
 }
 
@@ -96,6 +101,6 @@
 	}
 
 	.adicionar{
-		margin-top: 0;
+		margin-top: -5px;
 	}
 }
