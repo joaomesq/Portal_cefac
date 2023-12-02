@@ -218,7 +218,7 @@ endif;
             <button name="btn_adicionar" class="btn_adicionar btn_open_adicionar">Adicionar</button>
             <section class="modal_adicionar">
 
-                <button class="btn_close">X</button>
+                <button class="btn_close_adicionar">X</button>
                 <div class="modal_adicionar_elementos">
 
                 <div class="modal_add adicionar_apresentacao">
@@ -293,7 +293,8 @@ endif;
           $(".btn_close").click(function () {
                $(".modal").hide();
           });
-
+          
+          
      </script>
 </body>
 </html>
