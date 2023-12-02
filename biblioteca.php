@@ -218,7 +218,8 @@ endif;
             <button name="btn_adicionar" class="btn_adicionar btn_open_adicionar">Adicionar</button>
             <section class="modal_adicionar">
 
-                <div class="modal_add">
+                <button class="btn_close">X</button>
+                <div class="modal_add adicionar_apresentacao">
 
                 <form action="" method="POST" name="apresentacao" enctype="multipart/form-data">
                     <fieldset>
@@ -255,7 +256,7 @@ endif;
             <a href="biblioteca.php?sair=1" class="btn_sair">Sair</a>
         </article>
      </main>
-     
+
      <footer class="center">
           <p>"Chanax: Desenvolvendo ideias, criando soluções"</p>
           <p>&copy; 2023 - Todos os direitos reservados a Chanax Tecnolog.</p>
