@@ -213,7 +213,6 @@ endif;
                 </table>
             </section>
             </article>
-
             <article class="adicionar">
             <button name="btn_adicionar" class="btn_adicionar btn_open_adicionar">Adicionar</button>
             <section class="modal_adicionar">
