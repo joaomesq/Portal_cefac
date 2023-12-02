@@ -225,9 +225,16 @@ endif;
                     <fieldset>
                         <legend>Adicionar Apresentação</legend>
 
-                        <p><input type="text" name="disciplina" placeholder="Disciplina"></p>
-                        <p><input type="file" name="arquivo_apresentacao"></p>
+                        <p>
+                            <label>Disciplina</label>
+                            <input type="text" name="disciplina" placeholder="Disciplina">
+                        </p>
+                        <p>
+                            <label>Ficheiro</label>
+                            <input type="file" name="arquivo_apresentacao">
+                        </p>
 
+                        <br>
                         <button name="carregar_apresentacao" type="submite" class="btn_adicionar">Upload</button>
                         <button type="reset" class="limpar">Limpar</button>
                     </fieldset>
@@ -240,11 +247,24 @@ endif;
                         <fieldset>
                         <legend>Adicionar Livro</legend>
 
-                        <p><input type="text" name="autor_livro" placeholder="Autor"></p>
-                        <p><input type="text" name="categoria_livro" placeholder="Categoria"></p>
-                        <p><input type="number" name="ano_publicacao_livro" placeholder="Ano de Publicação"></p>
-                        <p><input type="file" name="arquivo_livro"></p>
+                        <p>
+                            <label>Autor</label>
+                            <input type="text" name="autor_livro" placeholder="Autor">
+                        </p>
+                        <p>
+                            <label>Categoria</label>
+                            <input type="text" name="categoria_livro" placeholder="Categoria">
+                        </p>
+                        <p>
+                            <label>Ano de Publicação</label>
+                            <input type="number" name="ano_publicacao_livro" placeholder="Ano de Publicação">
+                        </p>
+                        <p>
+                            <label>Ficheiro</label>
+                            <input type="file" name="arquivo_livro">
+                        </p>
                         
+                        <br>
                         <button name="carregar_livro" type="submite" class="btn_adicionar">Upload</button>
                         <button type="reset" class="limpar">Limpar</button>
                     </fieldset>

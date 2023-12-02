@@ -52,6 +52,7 @@
 /*Estilizando o modal adicionar*/
 .adicionar{
 	margin-top: -75px;
+	color: #fff;
 }
 .modal_adicionar{
 	display: grid;
@@ -62,7 +63,7 @@
 	height: 100%;
 	top: 0;
 
-	background: #f00;
+	background: #333;
 	padding: 10px;
 }
 .modal_add,
@@ -79,9 +80,11 @@
 }
 .modal_add form p{
 	display: grid;
-	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
 
 	margin: 0;
+
+	text-align: left;
 }
 .modal_add input{
 	border: 1 #000 solid;
@@ -91,6 +94,10 @@
 
 	margin: 5px;
 	padding: 4px;
+	color: #fff;
+}
+.modal_add input[type="file"]{
+	width: 100%;
 }
 
 /*Estilizando os botões do modal adiconar*/
@@ -113,11 +120,12 @@
 
 .limpar{
 	color: white;
-	background: #f00;
+	background: rgba(220, 0, 0, 1.0);
 	padding: 8px;
 	border: none;
 	border-radius: 4px;
 	font-size: 1.0em;
+	width: 100px;
 
 }
 
