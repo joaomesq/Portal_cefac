@@ -62,6 +62,7 @@
 
 	background: #333;
 	padding: 10px;
+	display: none;
 }
 .modal_adicionar_elementos{
 	display: grid;
@@ -122,6 +123,7 @@
 	padding: 8px;
 	width: 100px;
 	font-size: 1.0em;
+	margin-left: 15px;
 }
 
 .btn_close_adicionar{
@@ -150,8 +152,6 @@
 	}
 	.modal_adicionar_elementos{
 		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr;
-
 	}
 	.modal_add{
 		padding: 10px;
@@ -162,7 +162,7 @@
 		height: 50%;
 	}
 
-	.btn_close{
+	.btn_close_adicionar{
 		display: unset;
 	}
 }

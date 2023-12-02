@@ -294,7 +294,13 @@ endif;
                $(".modal").hide();
           });
           
-          
+          //MODAL ADICIONAR
+          $(".btn_open_adicionar").click(function () {
+               $(".modal_adicionar").show();
+          })
+          $(".btn_close_adicionar").click(function () {
+               $(".modal_adicionar").hide();
+          });
      </script>
 </body>
 </html>
