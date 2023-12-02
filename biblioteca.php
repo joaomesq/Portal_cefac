@@ -101,7 +101,7 @@ function exibir_livro(){
                      <td>".$livros['autor_livro']."</td>
                      <td>".$livros['ano_publicacao_livro']."</td>
                      <td>".$livros['categoria_livro']."</td>
-                     <td><a href='".$livros['caminho_livro']."' target='_blank'>download</a></td>
+                     <td><a href='".$livros['caminho_livro']."' target='_blank'><img src='./img/dowload.png'></a></td>
                  </tr>
                  ";
         endwhile;
@@ -122,7 +122,7 @@ function exibir_apresentacao(){
                  <tr>
                      <td>".$apresentacoes['disciplina_apresentacao']."</td>
                      <td>".$apresentacoes['titulo_apresentacao']."</td>
-                     <td><a href='".$apresentacoes['caminho_apresentacao']."' target='_blank'>download</a></td>
+                     <td><a href='".$apresentacoes['caminho_apresentacao']."' target='_blank'><img src='./img/dowload.png'></a></td>
                  </tr>
                  ";
         endwhile;
@@ -156,9 +156,9 @@ endif;
           <section>
         <h1><a href="index.php"><img src="./img/logo_black.png"></a></h1>
           
-          <button class="btn_open">Open</button>
-          <div class="modal">
-          <button class="btn_close">X</button>
+        <button class="btn_open"><img src="./img/menu.png"></button>
+        <div class="modal">
+        <button class="btn_close">X</button>
         <nav>
             <ul>
                     <li><a href="index.php">Home</a></li>
@@ -213,6 +213,7 @@ endif;
                 </table>
             </section>
             </article>
+
             <article class="adicionar">
             <button name="btn_adicionar" class="btn_adicionar btn_open_adicionar">Adicionar</button>
             <section class="modal_adicionar">

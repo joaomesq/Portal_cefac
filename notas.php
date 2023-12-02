@@ -108,7 +108,7 @@ $user_name = $_SESSION['usuario'];
           <section>
           <h1><a href="index.php"><img src="./img/logo_black.png"></a></h1>
           
-          <button class="btn_open">Open</button>
+          <button class="btn_open"><img src="./img/menu.png"></button>
           <div class="modal">
           <button class="btn_close">X</button>
           <nav>

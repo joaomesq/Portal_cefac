@@ -19,26 +19,30 @@ button{
 
 /*Estilizando o cabecalho*/
 .cabecalho{
-	
 	width: 100%;
-
 }
 .cabecalho section{
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-between;
+
 }
 
 .cabecalho section h1{
 	margin-left: 0;
 }
-.cabecalho img{
+.cabecalho h1 img{
 	width: 200px;
 	height: 100px;
 }
-.cabecalho .btn_open{
-	padding: 8px;
+.cabecalho .btn_open {
 	border: none;
 	border-radius: 4px;
+	background: transparent;
+
+	margin: 5px 40px 0 0 ;
+}
+.cabecalho .btn_open img{
+	width: 35px;
 }
 
 .cabecalho h2{
@@ -75,9 +79,13 @@ button{
 	display: none;
 	position: fixed;
 	right: 0;
+	
 	width: 50%;
 	height: 100%;
+	
 	padding: 10px;
+    margin-right: 0;
+	
 	color: #fff;
 	background: rgba(0, 51, 102, 1.0);
 }
@@ -103,6 +111,7 @@ button{
 	background-color: inherit;
 	color: #fff;
 	margin-left: 98%;
+	font-size: 1.4em;
 }
 
 /*Estilizando o Rodape*/
