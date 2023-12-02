@@ -219,8 +219,9 @@ endif;
             <section class="modal_adicionar">
 
                 <button class="btn_close">X</button>
-                <div class="modal_add adicionar_apresentacao">
+                <div class="modal_adicionar_elementos">
 
+                <div class="modal_add adicionar_apresentacao">
                 <form action="" method="POST" name="apresentacao" enctype="multipart/form-data">
                     <fieldset>
                         <legend>Adicionar Apresentação</legend>
@@ -242,7 +243,6 @@ endif;
                 </div>
 
                 <div class="modal_add adicionar_livro">
-                
                 <form name="livro" action="" method="POST" enctype="multipart/form-data">
                         <fieldset>
                         <legend>Adicionar Livro</legend>
@@ -269,7 +269,8 @@ endif;
                         <button type="reset" class="limpar">Limpar</button>
                     </fieldset>
                 </form>
-                
+                </div>
+
                 </div>
             </section>
 
