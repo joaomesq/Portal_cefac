@@ -4,11 +4,16 @@ require_once './php_action/validar.php';
 require_once './php_action/conect.php';
 
 $user_name = $_SESSION['usuario'];
-   
-   function p_trimestre(){
-     global $user_name;
+
+//MOSTRAR NOTAS
+function exibir_notas($valor){
      global $conect;
-     $sql = "SELECT *FROM notas WHERE trimestre = 1 AND nome_aluno = '$user_name' ORDER BY disciplina desc";
+     global $user_name;
+    
+    //1-TRIMESTRE
+     if ($valor == 1) {
+          // code...
+          $sql = "SELECT *FROM notas WHERE trimestre = 1 AND nome_aluno = '$user_name' ORDER BY disciplina desc";
      $consulta = mysqli_query($conect, $sql);
 
      if( mysqli_num_rows($consulta) != 0){
@@ -31,13 +36,11 @@ $user_name = $_SESSION['usuario'];
                       <td>---</td>
                       <td>---</td>
                     ";
-     }
-     
-   }
-
-   function s_trimestre(){
-     global $conect;
-     global $user_name;
+           }
+    }
+    //2-TRIMESTRE
+    elseif ($valor == 2) {
+     // code...
      $sql = "SELECT *FROM notas WHERE trimestre = 2 AND nome_aluno = '$user_name'";
      $consulta = mysqli_query($conect, $sql);
 
@@ -61,12 +64,10 @@ $user_name = $_SESSION['usuario'];
                       <td>---</td>
                       <td>---</td>
                     ";
-     }
-   }
-
-   function t_trimestre(){
-     global $conect;
-     global $user_name;
+        }
+    }
+    //3-TRIMESTRE
+    elseif($valor == 3){
      $sql = "SELECT *FROM notas WHERE trimestre = 3 AND nome_aluno = '$user_name'";
      $consulta = mysqli_query($conect, $sql);
 
@@ -90,9 +91,9 @@ $user_name = $_SESSION['usuario'];
                       <td>---</td>
                       <td>---</td>
                     ";
-     }
-   }
-   
+        }
+    }
+}   
 ?>
 <!DOCTYPE html>
 <html lang="pt-ao">
@@ -138,7 +139,7 @@ $user_name = $_SESSION['usuario'];
                          </thead>
                          <tbody>
                                    <?php
-                                        p_trimestre();
+                                        exibir_notas(1);
                                    ?>
                          </tbody>
                     </table>
@@ -156,7 +157,7 @@ $user_name = $_SESSION['usuario'];
                          </thead>
                          <tbody>
                               <?php
-                                   s_trimestre();
+                                   exibir_notas(2);
                               ?>
                          </tbody>
                     </table>
@@ -174,7 +175,7 @@ $user_name = $_SESSION['usuario'];
                          </thead>
                          <tbody>
                               <?php
-                                   t_trimestre();
+                                   exibir_notas(3);
                               ?>
                          </tbody>
                     </table>
