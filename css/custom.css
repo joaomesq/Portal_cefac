@@ -5,6 +5,9 @@
 
 	font-family: Roboto;
 }
+body{
+	background: rgba(239, 242, 247, 1.0);
+}
 a{
 	color: #000;
 	text-decoration: none;
