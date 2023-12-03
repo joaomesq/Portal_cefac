@@ -4,13 +4,14 @@ require_once './php_action/validar.php';
 //conexao
 require_once './php_action/conect.php';
 
-
-
-//UPLOAD APRESENTACAO
-function ulpoad_apresentacao(){
+//UPLOAD
+function upload(){
     global $conect;
 
-    $disciplina = clear($_POST['disciplina']);
+    //UPLOAD APRESENTACAO
+    if ( isset($_POST['carregar_apresentacao'])) {
+        // code...
+        $disciplina = clear($_POST['disciplina']);
 
     if($_FILES['arquivo_apresentacao']['size'] == 0)
         die("Selecione o arquivo");
@@ -27,12 +28,17 @@ function ulpoad_apresentacao(){
             die("Fallha ao carregar arquivo");
 
         $nome_apresentacao = $apresentacao['name'];
-        $novo_nome_livro = uniqid();
         $extensao = strtolower(pathinfo($nome_apresentacao, PATHINFO_EXTENSION));
-        $caminho = $pasta.$nome_apresentacao.".".$extensao;
+        $caminho = $pasta.$nome_apresentacao;
 
         if($extensao != 'pptx' AND $extensao != 'ppt' AND $extensao != 'pps' AND $extensao != 'potx' AND $extensao != 'ppsx')
             die("Tipo de arquivo não aceito");
+        
+        //Verficando a existência do arquivo
+        $sql ="SELECT *FROM apresentacao WHERE titulo_apresentacao = '$nome_apresentacao'";
+        $consulta = requisicao_Bd($conect, $sql);
+        if(obter_total_de_linhas_Dados($consulta) > 0)
+            die("O arquivo já existe");
 
         $sucesso = move_uploaded_file($apresentacao['tmp_name'], $caminho);
 
@@ -43,14 +49,11 @@ function ulpoad_apresentacao(){
             echo "Fallha ao enviar arquivo";
         endif;
     endif;
-} 
-
-
-//UPLOAD LIVROS
-function ulpoad_livros(){
-    global $conect;
-
-    $autor = clear($_POST['autor_livro']);
+    }
+        
+    //UPLOAD LIVRO
+    if (isset($_POST['carregar_livro'])) {
+        $autor = clear($_POST['autor_livro']);
     $categoria = clear($_POST['categoria_livro']);
     $ano_publicacao_livro = clear($_POST['ano_publicacao_livro']);
 
@@ -69,12 +72,17 @@ function ulpoad_livros(){
             die("Fallha ao carregar arquivo");
 
         $nome_livro = $livro['name'];
-        $novo_nome_livro = uniqid();
         $extensao = strtolower(pathinfo($nome_livro, PATHINFO_EXTENSION));
-        $caminho = $pasta.$nome_livro.".".$extensao;
+        $caminho = $pasta.$nome_livro;
 
         if($extensao != 'pdf')
             die("Tipo de arquivo não aceito");
+        
+        //Verificando a existência do arquivo
+        $sql ="SELECT *FROM livros WHERE titulo_livro = '$nome_livro'";
+        $consulta = requisicao_Bd($conect, $sql);
+        if(obter_total_de_linhas_Dados($consulta) > 0)
+            die("O arquivo já existe");
 
         $sucesso = move_uploaded_file($livro['tmp_name'], $caminho);
 
@@ -85,12 +93,18 @@ function ulpoad_livros(){
             echo "Fallha ao enviar arquivo";
         endif;
     endif;
+    }
 }
 
-//exibir livro
-function exibir_livro(){
+
+//Exibir arquivo
+function exibir_arquivo($valor){
     global $conect;
-    $sql = "SELECT *FROM livros ORDER BY categoria_livro DESC";
+    
+    //LIVRO
+    if ($valor == 'livro') {
+        // code...
+        $sql = "SELECT *FROM livros ORDER BY categoria_livro DESC";
     $consulta = mysqli_query($conect, $sql);
 
     if(mysqli_num_rows($consulta) != 0):
@@ -106,14 +120,17 @@ function exibir_livro(){
                  ";
         endwhile;
     else:
-        echo "Não existem Livros";
+        echo "
+              <tr>
+                  <td>Sem ficheiros</td>
+              </tr>
+              ";
     endif;
-}
-
-//exibir apresentacao
-function exibir_apresentacao(){
-    global $conect;
-    $sql = "SELECT *FROM apresentacao ORDER BY disciplina_apresentacao DESC";
+    }
+    //APRESENTACAO
+    elseif ($valor =="apresentacao") {
+        // code...
+        $sql = "SELECT *FROM apresentacao ORDER BY disciplina_apresentacao DESC";
     $consulta = mysqli_query($conect, $sql);
 
     if(mysqli_num_rows($consulta) != 0):
@@ -127,18 +144,19 @@ function exibir_apresentacao(){
                  ";
         endwhile;
     else:
-        echo "Não existem Livros";
+        echo "
+              <tr>
+                  <td>Sem ficheiros</td>
+              </tr>
+              ";
     endif;
+    }
 }
 
- //Upload livro
- if (isset($_POST['carregar_livro'])) {
-    ulpoad_livros();
- }
-
- //...Apresentação
- if(isset($_POST['carregar_apresentacao'])):
-    ulpoad_apresentacao();
+ //UPLOAD
+ if(isset($_POST['carregar_livro']) OR isset($_POST['carregar_apresentacao'])):
+    upload();
+else:
 endif;
 ?>
 
@@ -186,7 +204,7 @@ endif;
 
                     <tbody>
                         <?php
-                            exibir_apresentacao();
+                            exibir_arquivo('apresentacao');
                         ?>
                     </tbody>
                 </table>
@@ -207,7 +225,7 @@ endif;
 
                     <tbody>
                           <?php
-                              exibir_livro();
+                              exibir_arquivo('livro');
                           ?>
                     </tbody>
                 </table>
