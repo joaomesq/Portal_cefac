@@ -240,7 +240,7 @@ endif;
                 <div class="modal_adicionar_elementos">
 
                 <div class="modal_add adicionar_apresentacao">
-                <form action="" method="POST" name="apresentacao" enctype="multipart/form-data">
+                <form action="" method="POST" name="form_adicionar_apresentacao" enctype="multipart/form-data" onsubmit="return validar()">
                     <fieldset>
                         <legend>Adicionar Apresentação</legend>
 
@@ -261,7 +261,7 @@ endif;
                 </div>
 
                 <div class="modal_add adicionar_livro">
-                <form name="livro" action="" method="POST" enctype="multipart/form-data">
+                <form name="form_adicionar_livro" action="" method="POST" enctype="multipart/form-data" onsubmit="return validar()">
                         <fieldset>
                         <legend>Adicionar Livro</legend>
 
@@ -303,6 +303,7 @@ endif;
 
      <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="./js/materialize.min.js"></script>
+    <script type="text/javascript" src="./js/validacao_de_formulario.js"></script>
 
     <script>
           $(".btn_open").click(function () {

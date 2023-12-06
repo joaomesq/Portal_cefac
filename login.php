@@ -81,6 +81,6 @@ if (isset($_POST['btn_entrar'])) {
         </article>
      </main>
 
-     <footer></footer>
+     <script type="text/javascript" src="./js/validacao_de_formulario.js"></script>
 </body>
 </html>

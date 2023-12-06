@@ -1,5 +1,5 @@
 <?php
-//validar
+//Validar
 require_once './php_action/validar.php';
 
 ?>
