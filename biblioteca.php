@@ -53,7 +53,7 @@ function upload(){
         
     //UPLOAD LIVRO
     if (isset($_POST['carregar_livro'])) {
-        $autor = clear($_POST['autor_livro']);
+    $autor = clear($_POST['autor_livro']);
     $categoria = clear($_POST['categoria_livro']);
     $ano_publicacao_livro = clear($_POST['ano_publicacao_livro']);
 
