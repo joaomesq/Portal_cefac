@@ -23,7 +23,7 @@ primary key(id_notas)
 
 create table apresentacao(
 id_apresentacao int auto_increment NOT NULL,
-tittulo_apresentacao varchar(100) NOT NULL,
+titulo_apresentacao varchar(100) NOT NULL,
 disciplina_apresentacao varchar(50) NOT NULL,
 data_upload_apresentacao date NOT NULL,
 caminho_apresentacao varchar(100) NOT NULL,
